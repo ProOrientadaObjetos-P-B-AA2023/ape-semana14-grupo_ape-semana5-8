@@ -1,22 +1,43 @@
 package MODEL;
+
 public class Estudiante {
-    public String nombreEst, estado;
-    public double nota1, nota2, promedio;
-    public Estudiante(String nombreEst, double nota1, double nota2) {
-        this.nombreEst = nombreEst;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
+    public String nombre;
+    public String cedula;
+    public String correo;
+    public int notaFinal;
+    public String estado;
+
+    public Estudiante(String nombre, String cedula, String correo, int notaFinal) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.correo = correo;
+        this.notaFinal = notaFinal;
     }
-    public Estudiante(String nombreEst, double nota1, double nota2, double promedio,  String estado) {
-        this.nombreEst = nombreEst;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.promedio = promedio;
+
+    public Estudiante(String nombre, String cedula, String correo, int notaFinal, String estado) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.correo = correo;
+        this.notaFinal = notaFinal;
         this.estado = estado;
     }
+
+    public void establecerEstado(){
+        if (notaFinal>=7){
+            estado="Aprobado";
+        }else {
+            estado="Reprobado";
+        }
+    }
+
     @Override
     public String toString() {
-        return "Estudiante{" + "nombreEst=" + nombreEst + ", nota1=" + nota1 + ", nota2=" + nota2 + ", promedio=" + promedio + ", estado=" + estado + '}' ;
+        return "Estudiante{" +
+                "nombre='" + nombre + '\'' +
+                ", cedula='" + cedula + '\'' +
+                ", correo='" + correo + '\'' +
+                ", notaFinal=" + notaFinal +
+                ", estado='" + estado + '\'' +
+                '}';
     }
-    
 }
